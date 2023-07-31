@@ -1,6 +1,6 @@
 # Kabisa Happiness App
 
-[![ci](https://github.com/danielsevov/personal_happiness_app/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/kabisa/happiness-app/actions/workflows/main.yml)
+[![ci](https://github.com/danielsevov/personal_happiness_app/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/danielsevov/personal_happiness_app/actions/workflows/main.yml)
 
 ## Introduction
 Kabisa Happiness App is a comprehensive tool designed to track emotions, promote self-care, and facilitate personal growth experiences. The app, available across multiple platforms including Android, iOS, and macOS, offers several key features:

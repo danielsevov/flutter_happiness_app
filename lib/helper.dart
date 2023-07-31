@@ -71,6 +71,10 @@ class Helper {
     return constraints.maxWidth / 1.2 > 350 ? 350 : constraints.maxWidth / 1.2;
   }
 
+  static double getCircleSize(BoxConstraints constraints) {
+    return constraints.maxWidth < 400 ? constraints.maxWidth / 4 : 120;
+  }
+
   /// Function for making SnackBar toasts
   static void makeToast(BuildContext context, String string) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -235,6 +239,11 @@ class Helper {
     return woy;
   }
 
+  /// Get the month name of the given month number
+  static String getMonthName(int monthNumber) {
+    List<String> monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return monthNames[monthNumber - 1];
+  }
 
   /// Used to convert string to Day
   static Day convertStringToDay(String dayString) {

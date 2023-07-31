@@ -14,5 +14,5 @@ abstract class DailyIntrospectionHistoryPageView {
   void notifyFetchFailed(String errorMessage);
 
   /// Function to notify that all daily reports have been fetched and can be displayed.
-  void notifyReportsFetched(List<HappinessReport> reportWidgets, bool hasMoreReports);
+  void notifyReportsFetched(List<HappinessReport> reportWidgets, bool hasMoreReports, int dailyStreak, int weeklyStreak, int? dailyStreakMax, int? weeklyStreakMax,   int? longestDaily, int? longestWeekly);
 }

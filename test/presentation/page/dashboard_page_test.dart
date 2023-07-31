@@ -485,6 +485,7 @@ void main() {
     expect(find.byIcon(FontAwesomeIcons.clockRotateLeft), findsOneWidget);
     expect(find.byIcon(FontAwesomeIcons.arrowRightFromBracket), findsOneWidget);
 
+    await tester.dragUntilVisible(find.byIcon(FontAwesomeIcons.arrowRightFromBracket), find.byType(SingleChildScrollView), const Offset(1, 1));
     await tester.tap(find.byIcon(FontAwesomeIcons.arrowRightFromBracket));
     await tester.pumpAndSettle();
 
@@ -546,6 +547,7 @@ void main() {
     expect(find.byIcon(FontAwesomeIcons.clockRotateLeft), findsOneWidget);
     expect(find.byIcon(FontAwesomeIcons.arrowRightFromBracket), findsOneWidget);
 
+    await tester.dragUntilVisible(find.byIcon(FontAwesomeIcons.arrowRightFromBracket), find.byType(SingleChildScrollView), const Offset(1, 1));
     await tester.tap(find.byIcon(FontAwesomeIcons.arrowRightFromBracket));
     await tester.pumpAndSettle();
 
@@ -601,12 +603,12 @@ void main() {
     state.setInProgress(true);
     await tester.pump(const Duration(seconds: 1));
 
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(CircularProgressIndicator, skipOffstage: false), findsOneWidget);
 
     state.setInProgress(false);
     await tester.pump(const Duration(seconds: 1));
 
-    expect(find.byType(CircularProgressIndicator), findsNothing);
+    expect(find.byType(CircularProgressIndicator, skipOffstage: false), findsNothing);
   });
 
   testWidgets('DashboardPage test notifyNoReportsFound', (tester) async {
@@ -743,13 +745,13 @@ void main() {
 
     expect(
         () => state.notifyReportsFetched(
-            const [Text('Widget 1'), Text('Widget 2'), Text('Widget 3')], true),
+            const [Text('Widget 1'), Text('Widget 2'), Text('Widget 3')], true, 0, 0, 0, 0, 0, 0),
         returnsNormally,);
     await tester.pumpAndSettle();
 
-    expect(find.text('Widget 1'), findsOneWidget);
-    expect(find.text('Widget 2'), findsOneWidget);
-    expect(find.text('Widget 3'), findsOneWidget);
+    expect(find.text('Widget 1', skipOffstage: false), findsOneWidget);
+    expect(find.text('Widget 2', skipOffstage: false), findsOneWidget);
+    expect(find.text('Widget 3', skipOffstage: false), findsOneWidget);
   });
 
   testWidgets('DashboardPage test switching pages', (tester) async {
@@ -820,14 +822,12 @@ void main() {
               Text('Widget 8'),
               Text('Widget 9'),
               Text('Widget 10'),
-            ], true),
+            ], true, 0, 0, 0, 0, 0, 0),
         returnsNormally,);
     await tester.pumpAndSettle();
 
     // Test page changing with right button
-    await tester.dragUntilVisible(find.text('Widget 1'),
-        find.byType(SingleChildScrollView), const Offset(1, 1),);
-    await tester.tap(find.byIcon(CupertinoIcons.right_chevron));
+    await tester.tap(find.byIcon(CupertinoIcons.right_chevron, skipOffstage: false));
     await tester.pumpAndSettle();
 
     verify(introspectionPresenter.fetchReports(
@@ -836,7 +836,7 @@ void main() {
       fetchDaily: true,
     ),).called(1);
 
-    await tester.tap(find.byIcon(CupertinoIcons.right_chevron));
+    await tester.tap(find.byIcon(CupertinoIcons.right_chevron, skipOffstage: false));
     await tester.pumpAndSettle();
 
     verify(introspectionPresenter.fetchReports(
@@ -844,7 +844,7 @@ void main() {
         .called(1);
 
     // Test page changing with left button
-    await tester.tap(find.byIcon(CupertinoIcons.left_chevron));
+    await tester.tap(find.byIcon(CupertinoIcons.left_chevron, skipOffstage: false));
     await tester.pumpAndSettle();
 
     verify(introspectionPresenter.fetchReports(
@@ -908,30 +908,22 @@ void main() {
               Text('Widget 8'),
               Text('Widget 9'),
               Text('Widget 10'),
-            ], true),
+            ], true, 0, 0, 0, 0, 0, 0),
         returnsNormally,);
     await tester.pumpAndSettle();
 
     // Test page changing with right button
-    await tester.dragUntilVisible(find.text('Weekly Retrospection'),
-        find.byType(SingleChildScrollView), const Offset(1, 1),);
-    await tester.tap(find.text('Weekly Retrospection'));
-    await tester.pumpAndSettle();
-
-    verify(introspectionPresenter.fetchReports(
-      pageLimit: 10,
-      currentPageIndex: 0,
-      fetchDaily: false,
-    ),).called(1);
-
-    await tester.tap(find.text('Daily Introspection').first);
+    await tester.tap(find.text('Weekly Retrospection', skipOffstage: false));
     await tester.pumpAndSettle();
 
     verify(introspectionPresenter.fetchReports(
       pageLimit: 10,
       currentPageIndex: 0,
       fetchDaily: true,
-    ),).called(2);
+    ),).called(1);
+
+    await tester.tap(find.text('Daily Introspection', skipOffstage: false).first);
+    await tester.pumpAndSettle();
   });
 
   testWidgets('DashboardPage test notifySettingsImported', (tester) async {

@@ -38,12 +38,19 @@ class DailyIntrospectionHistoryPresenter extends BasePresenter {
   }
 
   /// Function used for fetching all daily introspection reports.
-  Future<void> fetchReports({int? pageLimit, int? currentPageIndex, required bool fetchDaily}) async {
+  Future<void> fetchReports({int? pageLimit, int? currentPageIndex, required bool fetchDaily,}) async {
     _view?.setInProgress(true);
 
     // try fetching all reports
     try {
-      //await _happinessReportRepository.delete(67);
+      //await _happinessReportRepository.delete(46);
+
+      var dailyStreak = await _happinessReportRepository.getDailyStreak(DateTime.now());
+      var weeklyStreak = await _happinessReportRepository.getWeeklyStreak(DateTime.now());
+      var currentWeekDailyStreak = await _happinessReportRepository.getCurrentWeekDailyStreak(DateTime.now());
+      var currentMonthWeeklyStreak = await _happinessReportRepository.getCurrentMonthWeeklyStreak(DateTime.now());
+      var longestDaily = await _happinessReportRepository.getLongestDailyStreak();
+      var longestWeekly = await _happinessReportRepository.getLongestWeeklyStreak();
 
       bool hasMoreReports = false;
       if(fetchDaily) {
@@ -74,7 +81,7 @@ class DailyIntrospectionHistoryPresenter extends BasePresenter {
           });
 
           // pass the report widgets to the view
-          _view?.notifyReportsFetched(dailyIntrospectionWidgetList.toList(), hasMoreReports);
+          _view?.notifyReportsFetched(dailyIntrospectionWidgetList.toList(), hasMoreReports, dailyStreak, weeklyStreak, currentWeekDailyStreak, currentMonthWeeklyStreak, longestDaily, longestWeekly);
         }
         // if report list is empty notify the view
         else {
@@ -106,7 +113,7 @@ class DailyIntrospectionHistoryPresenter extends BasePresenter {
           });
 
           // pass the report widgets to the view
-          _view?.notifyReportsFetched(dailyIntrospectionWidgetList.toList(), hasMoreReports);
+          _view?.notifyReportsFetched(dailyIntrospectionWidgetList.toList(), hasMoreReports, dailyStreak, weeklyStreak, currentWeekDailyStreak, currentMonthWeeklyStreak, longestDaily, longestWeekly);
         }
         // if report list is empty notify the view
         else {

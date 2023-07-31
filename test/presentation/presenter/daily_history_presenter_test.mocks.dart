@@ -195,6 +195,55 @@ class MockHappinessReportRepository extends _i1.Mock
             <_i2.HappinessReportModel>[]),
       ) as _i4.Future<List<_i2.HappinessReportModel>>);
   @override
+  _i4.Future<int> getDailyStreak(DateTime? today) => (super.noSuchMethod(
+        Invocation.method(
+          #getDailyStreak,
+          [today],
+        ),
+        returnValue: _i4.Future<int>.value(0),
+      ) as _i4.Future<int>);
+  @override
+  _i4.Future<int> getWeeklyStreak(DateTime? today) => (super.noSuchMethod(
+        Invocation.method(
+          #getWeeklyStreak,
+          [today],
+        ),
+        returnValue: _i4.Future<int>.value(0),
+      ) as _i4.Future<int>);
+  @override
+  _i4.Future<int> getLongestDailyStreak() => (super.noSuchMethod(
+        Invocation.method(
+          #getLongestDailyStreak,
+          [],
+        ),
+        returnValue: _i4.Future<int>.value(0),
+      ) as _i4.Future<int>);
+  @override
+  _i4.Future<int> getLongestWeeklyStreak() => (super.noSuchMethod(
+        Invocation.method(
+          #getLongestWeeklyStreak,
+          [],
+        ),
+        returnValue: _i4.Future<int>.value(0),
+      ) as _i4.Future<int>);
+  @override
+  _i4.Future<int> getCurrentWeekDailyStreak(DateTime? today) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentWeekDailyStreak,
+          [today],
+        ),
+        returnValue: _i4.Future<int>.value(0),
+      ) as _i4.Future<int>);
+  @override
+  _i4.Future<int> getCurrentMonthWeeklyStreak(DateTime? today) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentMonthWeeklyStreak,
+          [today],
+        ),
+        returnValue: _i4.Future<int>.value(0),
+      ) as _i4.Future<int>);
   _i4.Future<_i2.HappinessReportModel?> getReportByDate(
     String? date,
     bool? isDaily,
@@ -263,6 +312,12 @@ class MockDailyIntrospectionHistoryPageView extends _i1.Mock
   void notifyReportsFetched(
     List<_i6.HappinessReport>? reportWidgets,
     bool? hasMoreReports,
+    int? dailyStreak,
+    int? weeklyStreak,
+    int? dailyStreakMax,
+    int? weeklyStreakMax,
+    int? longestDaily,
+    int? longestWeekly,
   ) =>
       super.noSuchMethod(
         Invocation.method(
@@ -270,6 +325,12 @@ class MockDailyIntrospectionHistoryPageView extends _i1.Mock
           [
             reportWidgets,
             hasMoreReports,
+            dailyStreak,
+            weeklyStreak,
+            dailyStreakMax,
+            weeklyStreakMax,
+            longestDaily,
+            longestWeekly,
           ],
         ),
         returnValueForMissingStub: null,

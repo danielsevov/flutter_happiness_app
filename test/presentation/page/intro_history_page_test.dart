@@ -188,7 +188,7 @@ void main() {
       find.byType(IntrospectionHistoryPage),
     );
 
-    expect(() => state.notifyReportsFetched(const [], true), returnsNormally);
+    expect(() => state.notifyReportsFetched(const [], true, 0, 0, 0, 0,  0, 0), returnsNormally);
     await tester.pumpAndSettle();
   });
 
@@ -246,7 +246,7 @@ void main() {
           }),
           rank: 12,
         )
-      ], true),
+      ], true, 0, 0, 0, 0,  0, 0),
       returnsNormally,
     );
     await tester.pumpAndSettle();
@@ -319,7 +319,7 @@ void main() {
           }),
           rank: 1,
         )
-      ], true),
+      ], true, 0, 0, 0, 0,  0, 0),
       returnsNormally,
     );
     await tester.pumpAndSettle();
@@ -388,7 +388,7 @@ void main() {
           report: report,
           rank: 1,
         )
-      ], true),
+      ], true, 0, 0, 0, 0, 0, 0),
       returnsNormally,
     );
     await tester.pumpAndSettle();
@@ -523,7 +523,7 @@ void main() {
           report: report3,
           rank: 1,
         )
-      ], true),
+      ], true, 0, 0, 0, 0, 0, 0),
       returnsNormally,
     );
 

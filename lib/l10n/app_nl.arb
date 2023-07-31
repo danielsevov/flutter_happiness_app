@@ -146,5 +146,19 @@
       "dailyNotifications": "Dagelijkse meldingen",
       "weeklyNotifications": "Wekelijkse meldingen",
       "questionSkipped": "Vraag overgeslagen.",
+
+      "streakDays": "{days, plural, =0{U heeft deze week geen dagelijkse introspecties ingevuld!} =1{U heeft 1 dagelijkse introspectie ingevuld deze week!} other{U heeft {days} dagelijkse introspecties ingevuld deze week!}}\n{leftDays, plural, =1{Vul 1 meer om een beloning te krijgen!} other{Vul {leftDays} meer om een beloning te krijgen!}}",
+          "streakSurpassed": "Gefeliciteerd, {days, plural, =1{u heeft 1 dagelijkse introspectierapport voor deze week ingevuld!} other{u heeft alle {days} dagelijkse introspectierapporten voor deze week ingevuld!}}",
+          "streakWeeks": "{weeks, plural, =0{U heeft deze maand geen wekelijkse retrospecties ingevuld!} =1{U heeft 1 wekelijkse retrospectie ingevuld deze maand!} other{U heeft {weeks} wekelijkse retrospecties ingevuld deze maand!}}\n{leftWeeks, plural, =1{Vul 1 meer om een beloning te krijgen!} other{Vul {leftWeeks} meer om een beloning te krijgen!}}",
+          "streakWeeksSurpassed": "Gefeliciteerd, {weeks, plural, =1{u heeft 1 wekelijkse introspectierapport voor deze week ingevuld!} other{u heeft alle {weeks} wekelijkse introspectierapporten voor deze week ingevuld!}}",
+      "dailyStreak": "Dagelijkse reeks",
+      "weeklyStreak": "Wekelijkse reeks",
+      "viewRewards": "Bekijk beloningen",
+      "streakRewards": "Beloningen",
+      "maxStreak": "Maximale reeks",
+      "totalIntrospection": "Totaal aantal introspecties",
+      "longestDaily": "Langste dagelijkse",
+      "longestWeekly": "Langste wekelijkse",
+      "myProgress": "Mijn voortgang",
       "selectDate": "Selecteer reportdatum"
 }

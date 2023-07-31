@@ -48,6 +48,28 @@ abstract class HappinessReportRepository {
   /// created by employees which are team members of the current user.
   Future<List<HappinessReportModel>> getTeamWeeklyReports();
 
+  /// Returns a [Future] that completes with an [int] value indicating the number of consecutive days the user has completed a daily report.
+  /// The [today] parameter should be a [DateTime] object representing the current date.
+  Future<int> getDailyStreak(DateTime today);
+
+  /// Returns a [Future] that completes with an [int] value indicating the number of consecutive weeks the user has completed a weekly report.
+  /// The [today] parameter should be a [DateTime] object representing the current date.
+  Future<int> getWeeklyStreak(DateTime today);
+
+  /// Returns a [Future] that completes with an [int] value indicating the longest number of consecutive days the user has completed a daily report.
+  Future<int> getLongestDailyStreak();
+
+  /// Returns a [Future] that completes with an [int] value indicating the longest number of consecutive weeks the user has completed a weekly report.
+  Future<int> getLongestWeeklyStreak();
+
+  /// Returns a [Future] that completes with an [int] value indicating the number of days the user has completed a daily report in the current week.
+  /// The [today] parameter should be a [DateTime] object representing the current date.
+  Future<int> getCurrentWeekDailyStreak(DateTime today);
+
+  /// Returns a [Future] that completes with an [int] value indicating the number of weeks the user has completed a weekly report in the current month.
+  /// The [today] parameter should be a [DateTime] object representing the current date.
+  Future<int> getCurrentMonthWeeklyStreak(DateTime today);
+
   /// Returns a [Future] that completes with a [List] of all daily [HappinessReportModel] objects,
   /// created by the current user for a date.
   Future<HappinessReportModel?> getReportByDate(String date, bool isDaily);

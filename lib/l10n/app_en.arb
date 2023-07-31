@@ -273,5 +273,63 @@
     "dailyNotifications": "Daily Notifications",
     "weeklyNotifications": "Weekly Notifications",
     "questionSkipped": "Question skipped.",
+
+    "streakDays": "{days, plural, =0{You have not filled any daily introspections this week!} =1{You have filled 1 daily introspection this week!} other{You have filled {days} daily introspections this week!}}\n {leftDays, plural, =1{Fill 1 more to get a reward!} other{Fill {leftDays} more to get a reward!}}",
+                "@streakDays": {
+                  "placeholders": {
+                    "days": {
+                      "type": "int",
+                      "example": "23"
+                    },
+                    "leftDays": {
+                      "type": "int",
+                      "example": "23"
+                    }
+                  }
+                },
+
+    "streakSurpassed": "Congratulations, {days, plural, =1{you have filled 1 daily introspection report for this week!} other{you have filled all {days} daily introspection reports for this week!}}",
+                    "@streakSurpassed": {
+                      "placeholders": {
+                        "days": {
+                          "type": "int",
+                          "example": "23"
+                        }
+                      }
+                    },
+
+    "streakWeeks": "{weeks, plural, =0{You have not filled any weekly retrospections this month!} =1{You have filled 1 weekly retrospection this month!} other{You have filled {weeks} weekly retrospections this month!}}\n{leftWeeks, plural, =1{Fill 1 more to get a reward!} other{Fill {leftWeeks} more to get a reward!}}",
+                    "@streakWeeks": {
+                      "placeholders": {
+                        "weeks": {
+                          "type": "int",
+                          "example": "23"
+                        },
+                        "leftWeeks": {
+                          "type": "int",
+                          "example": "23"
+                        }
+                      }
+                    },
+
+        "streakWeeksSurpassed": "Congratulations, {weeks, plural, =1{you have filled 1 weekly introspection report for this week!} other{you have filled all {weeks} weekly introspection reports for this week!}}",
+                        "@streakWeeksSurpassed": {
+                          "placeholders": {
+                            "weeks": {
+                              "type": "int",
+                              "example": "23"
+                            }
+                          }
+                        },
+
+        "dailyStreak": "Daily Streak",
+        "weeklyStreak": "Weekly Streak",
+        "viewRewards": "View Rewards",
+        "streakRewards": "Rewards",
+        "maxStreak": "Max Streak",
+        "totalIntrospection": "Total Introspections",
+        "longestDaily": "Longest Daily",
+        "longestWeekly": "Longest Weekly",
+        "myProgress": "My Progress",
     "selectDate": "Select report date"
 }

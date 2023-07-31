@@ -14,6 +14,7 @@ import 'package:happiness_app/helper.dart';
 import 'package:happiness_app/presentation/presenters/daily_history_presenter.dart';
 import 'package:happiness_app/presentation/presenters/settings_presenter.dart';
 import 'package:happiness_app/presentation/state_management/language_settings_state.dart';
+import 'package:happiness_app/presentation/state_management/providers.dart';
 import 'package:happiness_app/presentation/state_management/user_details_state.dart';
 import 'package:happiness_app/presentation/ui/pages/daily_intro_page.dart';
 import 'package:happiness_app/presentation/ui/pages/introspection_history_page.dart';
@@ -25,12 +26,14 @@ import 'package:happiness_app/presentation/ui/widgets/daily_introspection/report
 import 'package:happiness_app/presentation/ui/widgets/drawer/custom_drawer.dart';
 import 'package:happiness_app/presentation/ui/widgets/drawer/custom_drawer_body_item.dart';
 import 'package:happiness_app/presentation/ui/widgets/reusable/dialogs/custom_dialog.dart';
+import 'package:happiness_app/presentation/ui/widgets/reusable/single_color.dart';
 import 'package:happiness_app/presentation/ui/widgets/reusable/toggle_button.dart';
+import 'package:happiness_app/presentation/ui/widgets/reward_system/max_streak_circle.dart';
+import 'package:happiness_app/presentation/ui/widgets/reward_system/streak_circle.dart';
+import 'package:happiness_app/presentation/ui/widgets/reward_system/weekly_reward_circle.dart';
 import 'package:happiness_app/presentation/views/pages/daily_history_page_view.dart';
 import 'package:happiness_app/presentation/views/pages/settings_page_view.dart';
 import 'package:intl/intl.dart';
-
-import '../../state_management/providers.dart';
 
 /// The dashboard page is the one, which is the home screen and
 /// allows the user to change settings, log out, and navigate to the other pages.
@@ -59,6 +62,12 @@ class DashboardPageState extends ConsumerState<DashboardPage>
   int currentPageIndex = 0;
   bool fetchDaily = true;
   bool hasMoreReports = false;
+  int dailyStreak = 0;
+  int weeklyStreak = 0;
+  int currentWeekDaily = 0;
+  int currentMonthWeekly = 0;
+  int longestDailyStreak = 0;
+  int longestWeeklyStreak = 0;
   String dateString = '';
 
   late AppLocalizations localizations;
@@ -96,7 +105,7 @@ class DashboardPageState extends ConsumerState<DashboardPage>
     widget.introspectionPresenter.fetchReports(
       pageLimit: pageLimit,
       currentPageIndex: currentPageIndex,
-      fetchDaily: fetchDaily,
+      fetchDaily: fetchDaily, 
     );
   }
 
@@ -138,7 +147,7 @@ class DashboardPageState extends ConsumerState<DashboardPage>
       widget.introspectionPresenter.fetchReports(
         pageLimit: pageLimit,
         currentPageIndex: currentPageIndex,
-        fetchDaily: fetchDaily,
+        fetchDaily: fetchDaily, 
       );
     }
   }
@@ -172,10 +181,17 @@ class DashboardPageState extends ConsumerState<DashboardPage>
   @override
 
   /// Function to notify that all daily reports have been fetched and can be displayed.
-  void notifyReportsFetched(List<Widget> reportWidgets, bool hasMore) {
+  void notifyReportsFetched(
+      List<Widget> reportWidgets, bool hasMore, int dailySk, int weeklySk, int? currentWeekDailyStreak, int? currentMonthWeeklyStreak,  int? longestDaily, int? longestWeekly) {
     setState(() {
       reports = reportWidgets;
       hasMoreReports = hasMore;
+      dailyStreak = dailySk;
+      weeklyStreak = weeklySk;
+      currentWeekDaily = currentWeekDailyStreak ?? 0;
+      currentMonthWeekly = currentMonthWeeklyStreak ?? 0;
+      longestDailyStreak = longestDaily ?? 0;
+      longestWeeklyStreak = longestWeekly ?? 0;
     });
   }
 
@@ -280,14 +296,85 @@ class DashboardPageState extends ConsumerState<DashboardPage>
               ),
               Padding(
                 padding: const EdgeInsets.all(20),
-                child: Image.asset(
-                  'assets/images/round_logo.png',
+                child: Container(
                   width: constraints.maxHeight / 5,
+                  height: constraints.maxHeight / 5, // Set height as needed
+                  child: Image.asset(
+                    'assets/images/round_logo.png',
+                    fit: BoxFit.cover, // This is to make sure that the image adapts to the size of the container
+                  ),
                 ),
               ),
-              const SizedBox(
-                height: 50,
+              !_isLoading ? Container(
+                width: Helper.getDrawerSize(constraints) * 0.8,
+                height: 130,
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      bottom: 15, left: 5, right: 5),
+                  child: SizedBox(
+                    child: Wrap(
+                      alignment: WrapAlignment.spaceEvenly,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        SingleColor(
+                          child: StreakCircle(
+                            streak: dailyStreak,
+                            isWeekly: false,
+                            localizations: localizations,
+                            mini: true, isRewardWidget: false,
+                          ),
+                          color: Theme.of(context).colorScheme.background,
+                        ),
+                        SingleColor(
+                          child: StreakCircle(
+                            streak: weeklyStreak,
+                            isWeekly: true,
+                            localizations: localizations,
+                            mini: true, isRewardWidget: false,
+                          ),
+                          color: Theme.of(context).colorScheme.background,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ) : SizedBox(height: 130,),
+
+              SizedBox(
+                width: Helper.getDrawerSize(constraints),
+                child: Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    Text(
+                      localizations.longestDaily,
+                      style: TextStyle(
+                        fontSize:
+                        Helper.getSmallTextSize(constraints),
+                        color: Theme.of(context).colorScheme.background,
+                      ),
+                    ),
+                    SizedBox(width: 5,),
+                    MaxStreakCircle(streak: longestDailyStreak, constraints: constraints, isWeekly: false,),
+                    SizedBox(width: 20,),
+                    MaxStreakCircle(streak: longestWeeklyStreak, constraints: constraints, isWeekly: true,),
+                    SizedBox(width: 5,),
+                    Text(
+                      localizations.longestWeekly,
+                      style: TextStyle(
+                        fontSize:
+                        Helper.getSmallTextSize(constraints),
+                        color: Theme.of(context).colorScheme.background,
+                      ),
+                    ),
+                  ],
+                ),
               ),
+
+              const SizedBox(
+                height: 20,
+              ),
+
               CustomDrawerBodyItem(
                 function: () {
                   Helper.replacePageWithSlideAnimation(
@@ -518,6 +605,25 @@ class DashboardPageState extends ConsumerState<DashboardPage>
                   sliver: SliverList(
                     delegate: SliverChildListDelegate(
                       [
+                        Column(
+                          children: [
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            SizedBox(
+                              width: 350,
+                              child: WeeklyRewardCircle(
+                                streak: fetchDaily ? currentWeekDaily : currentMonthWeekly,
+                                isWeekly: !fetchDaily,
+                                localizations: localizations, mini: false,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                          ],
+                        ),
+
                         const SizedBox(
                           height: 20,
                         ),
@@ -533,7 +639,7 @@ class DashboardPageState extends ConsumerState<DashboardPage>
                                   widget.introspectionPresenter.fetchReports(
                                     pageLimit: pageLimit,
                                     currentPageIndex: currentPageIndex,
-                                    fetchDaily: fetchDaily,
+                                    fetchDaily: fetchDaily, 
                                   );
                                 }
                               },
@@ -573,7 +679,7 @@ class DashboardPageState extends ConsumerState<DashboardPage>
                                       .fetchReports(
                                     pageLimit: pageLimit,
                                     currentPageIndex: currentPageIndex,
-                                    fetchDaily: fetchDaily,
+                                    fetchDaily: fetchDaily, 
                                   );
                                 }
                               },
@@ -653,3 +759,4 @@ class DashboardPageState extends ConsumerState<DashboardPage>
     );
   }
 }
+

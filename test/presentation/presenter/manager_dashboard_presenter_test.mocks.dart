@@ -207,6 +207,56 @@ class MockHappinessReportRepository extends _i1.Mock
             <_i2.HappinessReportModel>[]),
       ) as _i5.Future<List<_i2.HappinessReportModel>>);
   @override
+  _i5.Future<int> getDailyStreak(DateTime? today) => (super.noSuchMethod(
+        Invocation.method(
+          #getDailyStreak,
+          [today],
+        ),
+        returnValue: _i5.Future<int>.value(0),
+      ) as _i5.Future<int>);
+  @override
+  _i5.Future<int> getWeeklyStreak(DateTime? today) => (super.noSuchMethod(
+        Invocation.method(
+          #getWeeklyStreak,
+          [today],
+        ),
+        returnValue: _i5.Future<int>.value(0),
+      ) as _i5.Future<int>);
+  @override
+  _i5.Future<int> getLongestDailyStreak() => (super.noSuchMethod(
+        Invocation.method(
+          #getLongestDailyStreak,
+          [],
+        ),
+        returnValue: _i5.Future<int>.value(0),
+      ) as _i5.Future<int>);
+  @override
+  _i5.Future<int> getLongestWeeklyStreak() => (super.noSuchMethod(
+        Invocation.method(
+          #getLongestWeeklyStreak,
+          [],
+        ),
+        returnValue: _i5.Future<int>.value(0),
+      ) as _i5.Future<int>);
+  @override
+  _i5.Future<int> getCurrentWeekDailyStreak(DateTime? today) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentWeekDailyStreak,
+          [today],
+        ),
+        returnValue: _i5.Future<int>.value(0),
+      ) as _i5.Future<int>);
+  @override
+  _i5.Future<int> getCurrentMonthWeeklyStreak(DateTime? today) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getCurrentMonthWeeklyStreak,
+          [today],
+        ),
+        returnValue: _i5.Future<int>.value(0),
+      ) as _i5.Future<int>);
+  @override
   _i5.Future<_i2.HappinessReportModel?> getReportByDate(
     String? date,
     bool? isDaily,

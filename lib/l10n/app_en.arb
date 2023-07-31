@@ -1,0 +1,277 @@
+{
+  "happinessApp": "Happiness App",
+  "@happinessApp": {
+    "description": "The title of the application"
+  },
+
+  "introHistory": "Introspection History",
+  "@introHistory": {
+    "description": "The title of the introspection history page"
+  },
+
+  "dailyIntrospection": "Daily Introspection",
+  "@dailyIntrospection": {
+    "description": "The name of the daily happiness report"
+  },
+
+  "cannotCreateDailyReport": "Sorry, you already introspected today. Try again tomorrow!",
+  "@cannotCreateDailyReport": {
+    "description": "The message displayed to the user when they are not allowed to create new introspection report for the current date"
+  },
+
+  "fetchDailyReportsFailed": "There was a problem fetching the daily introspection reports!",
+  "@fetchDailyReportsFailed": {
+    "description": "The message displayed to the user when there was a problem fetching all daily introspection reports"
+  },
+
+  "noDailyReportsFound": "No daily introspection reports have been found!",
+  "@noDailyReportsFound": {
+    "description": "The message displayed to the user when there was no existing daily report found"
+  },
+
+  "dailyReportSaved": "Your daily introspection report has been saved!",
+    "@dailyReportSaved": {
+      "description": "The message displayed to the user when their daily introspection report has been successfully saved"
+  },
+
+  "dailyReportNotSaved": "Your daily introspection report has not been saved due to some technical problem!",
+      "@dailyReportNotSaved": {
+        "description": "The message displayed to the user when their daily introspection report has not been saved"
+    },
+
+  "dailyQuestionOne": "1. How are you feeling today?",
+      "@dailyQuestionOne": {
+        "description": "The first question of the daily introspection report"
+    },
+
+  "dailyQuestionTwo": "2. What have you done for yourself today?",
+        "@dailyQuestionTwo": {
+          "description": "The second question of the daily introspection report"
+      },
+
+  "dailyQuestionThree": "3. What have you done for others today?",
+        "@dailyQuestionThree": {
+          "description": "The third question of the daily introspection report"
+      },
+
+  "dailyQuestionFour": "4. What is your insight for the day?",
+        "@dailyQuestionFour": {
+          "description": "The fourth question of the daily introspection report"
+      },
+
+  "happiness": "Happiness",
+  "@happiness": {
+            "description": "The happiness emotion"
+        },
+
+  "sadness": "Sadness",
+  "@sadness": {
+            "description": "The sadness emotion"
+        },
+
+  "anger": "Anger",
+  "@anger": {
+            "description": "The anger emotion"
+        },
+
+  "fear": "Fear",
+  "@fear": {
+            "description": "The fear emotion"
+        },
+
+  "pleaseEnterText": "Please enter your answer",
+    "@pleaseEnterText": {
+              "description": "The hint, which the user sees while filling a text field answer"
+          },
+
+  "incompleteAnswer": "Please provide a more complete answer!",
+      "@incompleteAnswer": {
+                "description": "The message which the user receives if they haven't provided a complete answer to a question"
+            },
+
+  "saveReport": "Finish Introspection",
+        "@saveReport": {
+                  "description": "The label of the save report button used for saving the report"
+              },
+
+  "incompleteFeelings": "All feelings must be rated to save this report!",
+          "@incompleteFeelings": {
+                    "description": "The toast message which the user gets when trying to store a report with incomplete feeling level entries"
+                },
+
+  "noEntry": "No entry found!",
+        "@noEntry": {
+          "description": "The message shown to the user when an question entry for a specific report is missing"
+      },
+
+    "dailyReportQuestionTwo": "What did I do for myself:",
+          "@dailyReportQuestionTwo": {
+            "description": "The second question of the daily introspection report, shown in the completed report view"
+        },
+
+    "dailyReportQuestionThree": "What did I do for others:",
+          "@dailyReportQuestionThree": {
+            "description": "The third question of the daily introspection report, shown in the completed report view"
+        },
+
+    "dailyReportQuestionFour": "What is my insight for today:",
+          "@dailyReportQuestionFour": {
+            "description": "The fourth question of the daily introspection report, shown in the completed report view"
+        },
+
+    "feelingLevel": "{feeling} level:",
+    "@feelingLevel": {
+      "description": "A label for a feeling level entry",
+      "placeholders": {
+        "feeling": {
+          "type": "String",
+          "example": "Happiness"
+        }
+      }
+    },
+
+    "outOfTen": "/ 10",
+              "@outOfTen": {
+                "description": "The suffix added to the feeling level entry to show that the score X is selected out of 10 (X / 10)"
+            },
+
+    "changeLanguage": "Change language",
+                  "@changeLanguage": {
+                    "description": "Label of the change language button"
+                },
+
+    "selectLanguage": "Select a language",
+                      "@selectLanguage": {
+                        "description": "Label of the select language dialog"
+                    },
+
+    "english": "English",
+    "dutch": "Nederlands",
+    "bulgarian": "Български",
+    "skipQuestion": "Skip question",
+    "openQuestion": "Open question",
+    "login": "Log in",
+    "dashboard": "Dashboard",
+    "pleaseLogIn": "Welcome! Please log in to proceed!",
+    "logout": "Log out",
+    "sureLogOut": "Are you sure you want to log out?",
+
+    "dailyQuestionOneGuide": "This useful tool is designed to help you track and reflect on your emotional state. Here are some guidelines to help you assess your levels of the primary emotions Happiness, Anger, Fear, and Sadness:\n\n- Happiness: Think about what made you happy today. Perhaps you did something fun with friends or family, received a compliment at work, or finally completed a task you had been dreading. Reflect on what contributed to your happiness today and rate it on a scale of 0 to 10.\n\n- Anger: Think about what made you angry or frustrated today. Perhaps you had an unpleasant discussion with someone, were treated unfairly, or something didn't go as planned. Reflect on what contributed to your anger today and rate it on a scale of 0 to 10.\n\n- Fear: Consider what made you anxious or worried today. Perhaps you have an important deadline approaching, are concerned about your health, or had a stressful situation at work. Reflect on what contributed to your fear today and rate it on a scale of 0 to 10.\n\n- Sadness: Consider what made you sad today. Perhaps you received bad news, felt lonely, or were disappointed in yourself. Reflect on what contributed to your sadness today and rate it on a scale of 0 to 10.\n\nRemember that the purpose of this tool is to make you more aware of your emotional state and how it changes over time. Take the time to reflect on your emotions and rate them honestly to help you better understand and manage your feelings.",
+    "dailyQuestionTwoGuide": "This question is intended to help you reflect on how you have taken care of yourself today. Here are some examples to help you answer the question:\n\n- Have you taken action on your personal to-do list? This can include things like completing a project you've been working on, making progress on a personal goal, or completing a household task that was on your to-do list.\n\n- Have you prioritized self-care today? For example, have you taken a power nap if you were tired, eaten well, drank enough water, or engaged in physical activity?\n\n- Have you taken steps to maintain a healthy work-life balance? This could include setting boundaries between work and personal time, taking breaks during the day, or scheduling time for yourself to relax.\n\n- Have you made time for yourself today? Have you done something you enjoy, spent time with loved ones, or just taken a few minutes to relax and recharge?\n\nRemember that the goal of this question is to help you focus on how you can take good care of yourself and prioritize your well-being. Take the time to reflect on your day and how you can make self-care a priority in your daily routine.",
+    "dailyQuestionThreeGuide": "This question is intended to help you reflect on your day and think about the ways in which you have helped others. These can be simple (random) acts of kindness or more intentional efforts to assist others. Consider if you have helped someone without expecting anything in return or if you have done something positive for your community today, for example:\n\n- Have you offered to help a colleague with a project?\n\n- Have you held the door open for someone or let someone go ahead of you in the checkout line?\n\n- Did you do volunteer work today?\n\n- Have you picked up litter on the way home or helped an elderly person cross the street?\n\n- Have you made a donation to a charity or supported a friend in need?\n\nRemember that helping others doesn't have to be a grand gesture. Even small acts of kindness can make a big difference in someone's day. Try to focus on the positive impact you have had on others, rather than the recognition or reward you may receive.",
+    "dailyQuestionFourGuide": "This question is meant to help you reflect on what insights you gained today or what you learned about yourself. Here are some examples to help you with your answer:\n\n- Did you learn something about yourself that you didn't know before? This could be a new habit or behavior that you noticed or an awareness of your emotions or thought patterns.\n\n- Do you recognize a pattern in the things you do? This could be a repeated behavior or thought pattern that you noticed in yourself.\n\n- Did you make the right decisions based on intuition, arguments, or feelings? Are you aware of the potential consequences of this choice?\n\nRemember that the goal of this question is to help you focus on your personal growth and self-awareness. Take some time to reflect on your day and think about what you learned about yourself today.",
+
+    "feelingLowScore": "very low",
+    "feelingHighScore": "very high",
+
+    "calendarView": "Calendar View",
+    "graphView": "Graph View",
+    "listView": "List View",
+    "mostRecentIntrospections": "Latest Introspections",
+
+    "barChart": "Bar Chart",
+    "lineChart": "Line Chart",
+    "selectNumberOfPeriods": "Select number of periods per slide:",
+    "fourWeeks": "4 periods",
+    "eightWeeks": "8 periods",
+    "twelveWeeks": "12 periods",
+    "twentyFourWeeks": "24 periods",
+    "fiftyTwoWeeks": "52 periods",
+    "feelingLevels": "Feeling levels",
+    "selectTypeOfPeriods": "Select type of periods:",
+    "days": "Days",
+    "weeks": "Weeks",
+    "months": "Months",
+
+    "mySettings": "Settings",
+    "noSettingsFetched": "An unexpected error occurred while fetching your settings. Please try again later!",
+    "notifyMeOn": "Notify me on {day}",
+        "@notifyMeOn": {
+          "description": "A label for single day notification settings",
+          "placeholders": {
+            "day": {
+              "type": "String",
+              "example": "Monday"
+            }
+          }
+        },
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "notificationSettings": "Notifications",
+    "notifyMeAtTime": "Notify me at {time}",
+            "@notifyMeAtTime": {
+              "description": "A label for notification time settings",
+              "placeholders": {
+                "time": {
+                  "type": "String",
+                  "example": "16:00"
+                }
+              }
+            },
+    "canShare" : "Share introspection with others",
+    "dataSettings" : "Data & Privacy",
+    "dataPrivacyPolicy": "Data Privacy Policy",
+    "privacyPolicy": "This data privacy policy outlines how the Kabisa Happiness App collects, uses, and protects the personal data of its users. By using the Kabisa Happiness App, you agree to the terms of this Policy.\n\nPersonal Data Collected \nThe Kabisa Happiness App collects the following personal data from users:\n- Feeling levels for the day\n- Positive actions for self for the day\n- Positive actions for others for the day\n- Insights for the day\n- Notification preference\n- System language preference\n- Data sharing preference\n- Feeling levels for the week\n- Insights for the week\n\nData Storage and Access \nThe personal data collected by the Kabisa Happiness App is stored in Odoo and is only accessible to the owner of the data or users who the owner has shared this data with via the Kabisa Happiness App. The set up security rules, authorization mechanism and secure communication channel ensure that the personal data is protected and can only be accessed by the authorized users. In the role of an administrator of the Odoo instance, the Odoo admin is also authorized to see and modify this data. However, by default this data is hidden to the Odoo admin and they will not access it or try to access it unless specifically requested by the user owner of the data. By contract the Odoo admin handles the personal data with care and the data collected via the happiness app is also treated in the same way as other company data.\n\nPurpose of Data Collection \nThe personal data collected by the Kabisa Happiness App is used for the following purposes:\n- To allow users to track on a daily basis their own feelings, actions, and insights over time\n- To allow users to visualise and explore the collected daily introspection data\n- To allow users to have consistent app settings across multiple devices\n- To allow users to share daily introspection data with their group manager\n- To generate a weekly report that can be shared with the user's group manager\n- To allow group managers to visualise and explore the collected weekly retrospection data of their employees\n- To allow group managers to visualise and explore the collected daily introspection data of their employees, if the employee has agreed to share their daily introspection data\n\nData Sharing \nThe personal data collected by the Kabisa Happiness App is not shared with any third parties. The weekly retrospection report containing insights for the week is meant to be shared internally with the user's group manager and potentially with their team members. The daily introspection data is not shared with anyone without the explicit consent of the user. If a user chooses to share their daily introspection data, their group manager will be able to visualize and explore the data, but will not be able to edit or delete it.\n\nData Protection \nThe Kabisa Happiness App takes reasonable measures to protect the personal data of its users from unauthorised access, theft, loss, or damage. These measures include access control, using secure communication channels, setting up record security rules and employee training, among others. The happiness app's security measures do not differ from those applied to other company data, which means that the app is subject to the same security protocols and standards used to protect other data assets within Kabisa.\n\nData Retention \nThe personal data collected by the Kabisa Happiness App is retained for as long as the user has an active Odoo account with the company. If a user account is deleted, their personal data will be permanently deleted from the Odoo database.\n\nUser Rights \nUsers have the right to access their personal data at any time. They can edit the daily and weekly reports if the reports are generated on the same date as the modification attempt. The users have the right to have their data removed from the Odoo database, but to do so they would need to contact the Odoo administrator.\n\nCompliance with Data Privacy Laws \nThe Kabisa Happiness App complies with the General Data Protection Regulation (GDPR). To ensure compliance, the Kabisa Happiness App has implemented measures such as obtaining user consent, providing transparency about the personal data being collected, and enabling users to exercise their rights over their data.\n\nConclusion \nThe Kabisa Happiness App is committed to protecting its users' personal data and ensuring compliance with all relevant data privacy laws and regulations. By using the app, users agree to the terms outlined in this Policy. The personal data collected is used to enhance the user experience, support personal growth, and facilitate communication with group managers. The Kabisa Happiness App takes necessary measures to secure user data and respects users' rights to access or delete their personal information. Through transparency and adherence to data protection standards, the Kabisa Happiness App aims to foster trust and provide a valuable tool for users to monitor and improve their well-being.",
+    "dataPrivacyGuide": "Your daily introspections are private by default, which means that only you have access to them. However, if you turn on the \"Share Introspection\" switch, your group manager will have read access to your daily introspection reports. This allows them to support you better on your journey of self-improvement. Please note that this switch does not control access to your weekly review reports, which are always public.\n\nWe understand that your data privacy is important, which is why we only allow sharing your private data with your group manager, who is bound by confidentiality agreements. Your data is also stored securely in Odoo together with your other company data, in order to protect your privacy.\n\nPlease be assured that all data collected by the Happiness app is used only within the app to help you track your progress and improve your well-being. Your happiness data is not shared with any third-party applications or advertisers. You can explore all of your data within the app, giving you complete control and transparency over your information. For more information about data privacy please read our data privacy policy.",
+    "close": "CLOSE",
+
+    "weeklyQuestionOne": "1. Overall how would I rate this (past) week?",
+    "weeklyQuestionOneGuide": "Please take a moment to reflect on your experience this week. On a scale of 1 to 10, with 1 being the lowest and 10 being the highest, how would you rate your overall satisfaction and productivity during this week? Consider the various aspects of your work, including the quality of your interactions with colleagues, the level of support you received and the progress you made on your projects or tasks.\n\nThe retrospective is invaluable for yourself to learn from your experiences and to understand your experience and identify areas for improvement. Second, your honest and thoughtful response will contribute to Kabisa’s ongoing efforts to enhance your personal happiness and take care of you when needed.",
+
+    "weeklyQuestionTwo": "2. Why did I choose that rating for my week's experience?",
+    "weeklyQuestionTwoGuide": "Please provide more information about the reasons behind your rating. Your insights will help yourself to understand the specific factors that influenced your experience this week and make improvements accordingly.",
+
+    "weeklyQuestionThree": "3. What have I learned this week?",
+    "weeklyQuestionThreeGuide": "This question aims to understand your newly obtained knowledge, the valuable lessons or insights you've gained from your experiences this week. By sharing your learnings, you contribute to our collective knowledge and help us identify opportunities for continuous improvement and growth, both personally and professionally. Please reflect on any meaningful takeaways or realizations from this week's work.",
+
+    "finishWeeklyRetro": "Finish Retrospection",
+
+    "weeklyRetrospection": "Weekly Retrospection",
+    "fetchWeeklyReportsFailed": "There was a problem fetching the weekly retrospection reports!",
+    "noWeeklyReportsFound": "No weekly retrospection reports have been found!",
+    "weeklyReportSaved": "Your weekly retrospection report has been saved!",
+    "weeklyReportNotSaved": "Your weekly retrospection report has not been saved due to some technical problem!",
+    "pleaseEnterOptionalText": "(Optional) Please enter your answer",
+
+    "weeklyRating": "Weekly rating:",
+    "whyThisRating": "Why did I choose this rating:",
+    "whatHaveLearned": "What did I learn:",
+    "happinessHint": "Think about emotions like contentment, joy, and elation. It's the feeling you get when something good happens to you, and you feel pleased and satisfied with yourself and your life. On the other hand, maybe something bad happens and you feel disappointed and dissatisfied. Then you can rate your happiness with a low score.",
+    "angerHint": "Think about emotions like frustration, annoyance, and indignation. It's the feeling you get when something happens that goes against your wishes or beliefs, and you feel a sense of injustice or unfairness. On the other hand, maybe you feel at peace and in-tune with the situation, and you feel calm. Then you can rate your anger with a low score.",
+    "fearHint": "Think about emotions like anxiety, apprehension, and terror. It's the feeling you get when you perceive a threat or danger, and you feel a sense of vulnerability or helplessness. On the other hand, maybe you feel secure and confident, and you feel safe. Then you can rate your fear with a low score.",
+    "sadnessHint": "Think about emotions like grief, sorrow, and melancholy. It's the feeling you get when you experience loss or disappointment, and you feel a sense of emptiness or longing. On the other hand, maybe you feel content and fulfilled, and you feel at peace with the situation. Then you can rate your sadness with a low score.",
+    "happinessLowScore": "not happy",
+    "happinessHighScore": "very happy",
+
+    "sadnessLowScore": "not sad",
+    "sadnessHighScore": "very sad",
+
+    "angerLowScore": "not angry",
+    "angerHighScore": "very angry",
+
+    "fearLowScore": "no fear",
+    "fearHighScore": "very frightened",
+
+    "ratingLowScore": "very unhappy",
+    "ratingHighScore": "very happy",
+
+    "questionSkipped": "Question skipped.",
+    "sessionExpired": "Your session has expired. Please login again.",
+    "unknown": "Unknown",
+    "managerDashboard": "Managerial Dashboard",
+    "thisWeek": "This Week",
+    "lastWeek": "Last Week",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "anytime": "Anytime",
+    "week": "Week",
+    "dailyNotifications": "Daily Notifications",
+    "weeklyNotifications": "Weekly Notifications",
+    "questionSkipped": "Question skipped.",
+    "selectDate": "Select report date"
+}

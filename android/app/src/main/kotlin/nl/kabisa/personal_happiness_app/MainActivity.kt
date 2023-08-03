@@ -1,4 +1,4 @@
-package bg.danielsevov.happiness
+package nl.kabisa.personal_happiness_app
 
 import io.flutter.embedding.android.FlutterActivity
 

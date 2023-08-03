@@ -6,7 +6,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:happiness_app/domain/repositories/odoo_token_repo.dart';
 import 'package:happiness_app/helper.dart';
-import 'package:happiness_app/presentation/ui/kabisa_login_browser.dart';
+import 'package:happiness_app/presentation/ui/login_browser.dart';
 import 'package:happiness_app/presentation/ui/pages/dashboard_page.dart';
 import 'package:happiness_app/presentation/ui/widgets/reusable/dialogs/custom_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -177,7 +177,7 @@ class LogInPageState extends ConsumerState<LogInPage> {
 
                       if (result != null && result) {
                         if (!context.mounted) return;
-                        final browser = KabisaLoginBrowser(
+                        final browser = LoginBrowser(
                           () {
                             Helper.replacePageWithSlideAnimation(
                               context,
@@ -211,7 +211,7 @@ class LogInPageState extends ConsumerState<LogInPage> {
                           settings: settings,
                           urlRequest: URLRequest(
                             url: WebUri(
-                                'https://portal.kabisa.nl/web/login',),
+                                'https://testhappinessapp.odoo.com/web/login',),
                           ),
                         );
                       }

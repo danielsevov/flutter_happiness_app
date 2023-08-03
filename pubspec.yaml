@@ -1,5 +1,5 @@
 name: happiness_app
-description: A happiness tracking app, developed for the employees of Kabisa.
+description: A happiness tracking app, developed for the employees of .
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -40,7 +40,7 @@ dependencies:
   mockito: ^5.3.2
   build_runner: ^2.3.3
   flutter_rating_bar: ^4.0.1
-  intl: ^0.17.0
+  intl: ^0.18.0
   flutter_localizations:
     sdk: flutter
   flutter_riverpod: ^2.3.0
@@ -48,7 +48,7 @@ dependencies:
   flutter_native_splash: ^2.2.19
   flutter_launcher_icons: ^0.12.0
   odoo_rpc: ^0.5.1
-  flutter_inappwebview: ^6.0.0-beta.22
+  flutter_inappwebview: ^6.0.0-beta.24+1
   very_good_analysis: ^4.0.0+1
   table_calendar: ^3.0.8
   font_awesome_flutter: ^10.4.0
@@ -57,7 +57,6 @@ dependencies:
   shared_preferences: ^2.1.0
   just_the_tooltip: ^0.0.12
   flutter_secure_storage: ^8.0.0
-  charts_common: ^0.12.0
   stack_trace: ^1.11.0
   fl_chart: ^0.62.0
 
@@ -81,7 +80,7 @@ flutter_icons:
     image_path: "assets/images/round_logo.png"
 
 flutter_native_splash:
-  color: "#41C387"
+  color: "#4187C3"
   android: true
   ios: true
 

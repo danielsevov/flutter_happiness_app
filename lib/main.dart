@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -27,7 +28,7 @@ Future<void> main() async {
     return stack;
   };
 
-  if (!Platform.isMacOS) {
+  if (!kIsWeb && !Platform.isMacOS) {
     await requestPermissions();
   }
 
@@ -99,12 +100,12 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             inputDecorationTheme: InputDecorationTheme(
               filled: true,
-              fillColor: AppColors.primaryKabisaGreen.withOpacity(0.1),
-              prefixIconColor: AppColors.primaryKabisaGreen,
+              fillColor: AppColors.primaryBlue.withOpacity(0.1),
+              prefixIconColor: AppColors.primaryBlue,
               errorStyle: const TextStyle(color: Colors.deepOrange),
               focusedBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
-                  color: AppColors.primaryKabisaGreen,
+                  color: AppColors.primaryBlue,
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -118,7 +119,7 @@ class MyApp extends StatelessWidget {
               ),
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: AppColors.primaryKabisaGreen.withOpacity(0.5),
+                  color: AppColors.primaryBlue.withOpacity(0.5),
                 ),
                 borderRadius: BorderRadius.circular(10),
               ),
@@ -127,8 +128,8 @@ class MyApp extends StatelessWidget {
                   ),
             ),
             colorScheme: const ColorScheme(
-              primary: AppColors.primaryKabisaGreen,
-              secondary: AppColors.secondaryKabisaGreen,
+              primary: AppColors.primaryBlue,
+              secondary: AppColors.secondaryBlue,
               background: AppColors.kabisaWhite,
               surface: AppColors.kabisaWhite,
               error: Colors.deepOrange,

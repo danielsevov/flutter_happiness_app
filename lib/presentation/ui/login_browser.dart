@@ -5,8 +5,8 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 /// Web browser nested within the application, which allows
 /// the odoo login page to be shown to the user for log in
 /// and then the sessionId is extracted and used for authentication.
-class KabisaLoginBrowser extends InAppBrowser {
-  KabisaLoginBrowser(this.navigateToDashboard, this.initFunction, this.logger,
+class LoginBrowser extends InAppBrowser {
+  LoginBrowser(this.navigateToDashboard, this.initFunction, this.logger,
       {CookieManager? cookieManager,})
       : cookieManager = cookieManager ?? CookieManager.instance();
 
@@ -43,7 +43,7 @@ class KabisaLoginBrowser extends InAppBrowser {
   Future<void> onUpdateVisitedHistory(WebUri? url, bool? isReload) async {
     // if log in was successful
     if (url != null &&
-        url.toString() == ('https://portal.kabisa.nl/web')) {
+        url.toString() == ('https://testhappinessapp.odoo.com/web')) {
       // extract the session id cookie
       final cookies = await cookieManager.getCookies(url: url);
       final mainCookie =

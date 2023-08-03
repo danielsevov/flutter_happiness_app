@@ -20,7 +20,7 @@ class OdooDatasource implements Datasource, InitDatasource {
   /// Private constructor for creating a singleton instance.
   OdooDatasource._internal();
 
-  final odooUrl = 'https://portal.kabisa.nl:443';
+  final odooUrl = 'https://testhappinessapp.odoo.com:443';
   late OdooClient client;
   late OdooClient Function(String url, OdooSession session) createOdooClient;
 

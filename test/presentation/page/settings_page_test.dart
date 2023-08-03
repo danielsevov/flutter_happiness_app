@@ -1030,7 +1030,7 @@ void main() {
     expect(find.text('Data Privacy Policy'), findsWidgets);
     expect(
         find.textContaining(
-            'This data privacy policy outlines how the Kabisa Happiness App collects, uses, and protects the personal data of its users.',),
+            'This data privacy policy outlines how the  Happiness App collects, uses, and protects the personal data of its users.',),
         findsOneWidget,);
   });
 

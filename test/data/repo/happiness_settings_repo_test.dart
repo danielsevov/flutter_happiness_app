@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, cascade_invocations, avoid_slow_async_io
+// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, cascade_invocations, avoid_slow_async_io, deprecated_member_use
 
 import 'dart:io';
 

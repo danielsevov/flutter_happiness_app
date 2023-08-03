@@ -491,7 +491,7 @@ void main() {
     await tester.tap(find.byIcon(CupertinoIcons.clock).first);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.keyboard));
+    await tester.tap(find.byIcon(Icons.keyboard_outlined));
     await tester.pumpAndSettle();
 
     // Change the time in the time picker dialog
@@ -1083,11 +1083,12 @@ void main() {
 
     // Pick a new time for the weekly notification.
     await tester.pumpAndSettle();
+    await tester.dragUntilVisible(find.byIcon(CupertinoIcons.clock).last, find.byType(SingleChildScrollView), const Offset(1, 1),);
     await tester.ensureVisible(find.byIcon(CupertinoIcons.clock).last);
     await tester.tap(find.byIcon(CupertinoIcons.clock).last);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.keyboard));
+    await tester.tap(find.byIcon(Icons.keyboard_outlined));
     await tester.pumpAndSettle();
 
     // Change the time in the time picker dialog

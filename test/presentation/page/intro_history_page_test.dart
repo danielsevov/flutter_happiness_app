@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, deprecated_member_use
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -410,22 +410,26 @@ void main() {
     await tester.tap(find.text('4 periods').first);
     await tester.pumpAndSettle();
 
+    await tester.dragUntilVisible(find.text('Bar Chart').first,
+      find.byType(SingleChildScrollView), const Offset(1, 1),);
     await tester.tap(find.text('Bar Chart').first);
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Line Chart').first);
     await tester.pumpAndSettle();
-
-    await tester.tap(find.text('4 periods').first);
-    await tester.pumpAndSettle();
-
-    await tester.tap(find.text('12 periods').first);
-
+    
     await tester.tap(find.text('Weeks').first);
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Months').first);
     await tester.pumpAndSettle();
+
+    await tester.dragUntilVisible(find.text('4 periods').first,
+      find.byType(SingleChildScrollView), const Offset(1, 1),);
+    await tester.tap(find.text('4 periods').first);
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('12 periods').first);
 
     await tester.pumpAndSettle();
   });
@@ -536,12 +540,16 @@ void main() {
     await tester.dragUntilVisible(find.text('12 periods').first,
         find.byType(SingleChildScrollView), const Offset(1, 1),);
 
+    await tester.dragUntilVisible(find.text('Bar Chart').first,
+      find.byType(SingleChildScrollView), const Offset(1, 1),);
     await tester.tap(find.text('Bar Chart').first);
     await tester.pumpAndSettle();
 
     await tester.tap(find.text('Line Chart').first);
     await tester.pumpAndSettle();
 
+    await tester.dragUntilVisible(find.text('12 periods').first,
+      find.byType(SingleChildScrollView), const Offset(1, 1),);
     await tester.tap(find.text('12 periods').first);
     await tester.pumpAndSettle();
 

@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first
+// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, deprecated_member_use
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -491,7 +491,7 @@ void main() {
     await tester.tap(find.byIcon(CupertinoIcons.clock).first);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.keyboard));
+    await tester.tap(find.byIcon(Icons.keyboard_outlined));
     await tester.pumpAndSettle();
 
     // Change the time in the time picker dialog
@@ -1030,7 +1030,7 @@ void main() {
     expect(find.text('Data Privacy Policy'), findsWidgets);
     expect(
         find.textContaining(
-            'This data privacy policy outlines how the Kabisa Happiness App collects, uses, and protects the personal data of its users.',),
+            'This data privacy policy outlines how the  Happiness App collects, uses, and protects the personal data of its users.',),
         findsOneWidget,);
   });
 
@@ -1083,11 +1083,12 @@ void main() {
 
     // Pick a new time for the weekly notification.
     await tester.pumpAndSettle();
+    await tester.dragUntilVisible(find.byIcon(CupertinoIcons.clock).last, find.byType(SingleChildScrollView), const Offset(1, 1),);
     await tester.ensureVisible(find.byIcon(CupertinoIcons.clock).last);
     await tester.tap(find.byIcon(CupertinoIcons.clock).last);
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byIcon(Icons.keyboard));
+    await tester.tap(find.byIcon(Icons.keyboard_outlined));
     await tester.pumpAndSettle();
 
     // Change the time in the time picker dialog

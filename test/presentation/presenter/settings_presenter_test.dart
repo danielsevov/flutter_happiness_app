@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, cascade_invocations
+// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, cascade_invocations, deprecated_member_use
 
 import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';

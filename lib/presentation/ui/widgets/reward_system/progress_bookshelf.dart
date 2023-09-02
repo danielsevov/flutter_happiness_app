@@ -66,7 +66,7 @@ class ProgressPainter extends CustomPainter {
 
     // Draw the cupboard outline
     var cupboardOutlinePaint = Paint()
-      ..color = AppColors.secondaryKabisaGreen
+      ..color = AppColors.secondaryBlue
       ..style = PaintingStyle.stroke
       ..strokeWidth = 15.0;
 
@@ -100,8 +100,8 @@ class ProgressPainter extends CustomPainter {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            AppColors.primaryKabisaGreen,
-            AppColors.secondaryKabisaGreen,
+            AppColors.primaryBlue,
+            AppColors.secondaryBlue,
             AppColors.ribbonColor
           ],
         ).createShader(Rect.fromLTRB(0, shelfTop, size.width, shelfTop + 5));
@@ -134,7 +134,7 @@ class ProgressPainter extends CustomPainter {
       double randomOpacity =
           0.6 + randomOpacities[i] * 0.4; // random double between 0.6 and 1.0
       var bookPaint = Paint()
-        ..color = AppColors.primaryKabisaGreen.withOpacity(randomOpacity)
+        ..color = AppColors.primaryBlue.withOpacity(randomOpacity)
         ..style = PaintingStyle.fill;
 
       var bookRect = Rect.fromLTWH(0, -randomHeight, randomWidth, randomHeight);

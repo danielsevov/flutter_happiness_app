@@ -94,7 +94,7 @@ class StreakCircle extends StatelessWidget {
             // Ribbon using CustomPaint
             !mini ? CustomPaint(
               size: Size(widgetSize, widgetSize), // adjust the size as needed
-              painter: StreakRibbonPainter(AppColors.primaryKabisaGreen, AppColors.ribbonColor),
+              painter: StreakRibbonPainter(AppColors.primaryBlue, AppColors.ribbonColor),
             ) : SizedBox(),
             SizedBox(height: 12),
             Stack(

@@ -23,12 +23,4 @@ class AppColors {
 
 
   static const Color ribbonColor = Color.fromRGBO(0, 77, 64, 1);  // A darker shade of teal
-
-  /// Function used for converting material color to chart color
-  static charts.Color convertColorToChartsColor(Color color) => charts.Color(
-        r: color.red,
-        g: color.green,
-        b: color.blue,
-        a: color.alpha,
-      );
 }

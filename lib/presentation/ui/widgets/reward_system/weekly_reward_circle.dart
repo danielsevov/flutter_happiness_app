@@ -87,7 +87,7 @@ class WeeklyRewardCircle extends StatelessWidget {
             // Ribbon using CustomPaint
             CustomPaint(
               size: Size(widgetSize, widgetSize), // adjust the size as needed
-              painter: StreakRibbonPainter(AppColors.primaryKabisaGreen, AppColors.ribbonColor),
+              painter: StreakRibbonPainter(AppColors.primaryBlue, AppColors.ribbonColor),
             ),
             SizedBox(height: 12),
             Stack(
